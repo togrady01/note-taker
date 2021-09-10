@@ -1,15 +1,22 @@
 class Model {
   constructor() {
-    this.notes = ['an initial note'];
+    this.KEY = 'NOTES_APP';
+    this.notes = ['I\'m a note'];
     this.active = 0;
+    const savedData = window.localStorage?.getItem(this.KEY);
+    if (savedData) {
+      [this.notes, this.active] = JSON.parse(savedData);
+    }
   }
 
   create(note) {
     this.active = this.notes.push(note) - 1;
+    this.save();
   }
 
   update(note) {
     this.notes[this.active] = note;
+    this.save();
   }
 
   delete(index) {
@@ -19,6 +26,17 @@ class Model {
       this.notes = [];
     }
     this.active = undefined;
+    this.save();
+  }
+
+  save() {
+    if (window.localStorage) {
+      window.localStorage.setItem(this.KEY, JSON.stringify([this.notes, this.active]));
+    }
+  }
+
+  purgeCache() {
+    window.localStorage.removeItem(this.KEY);
   }
 }
 
