@@ -20,6 +20,10 @@ class Controller {
       );
     });
 
+    this.view.clearCacheButton.addEventListener('click', () => {
+      this.model.clearCache();
+    });
+
     this.view.loadNotes(
       this.model.notes, this.model.active, setActiveNote, (i) => this.model.delete(i),
     );

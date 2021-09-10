@@ -35,7 +35,7 @@ class Model {
     }
   }
 
-  purgeCache() {
+  clearCache() {
     window.localStorage.removeItem(this.KEY);
   }
 }

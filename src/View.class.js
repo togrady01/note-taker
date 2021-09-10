@@ -2,11 +2,22 @@ class View {
   constructor() {
     this.root = document.getElementById('root');
     this.leftContainer = document.createElement('nav');
+
     this.newNoteButton = document.createElement('button');
     this.newNoteButton.innerText = 'New Note';
 
+    this.clearCacheButton = document.createElement('button');
+    this.clearCacheButton.innerText = 'Clear Saved Notes';
+
+    const heading = document.createElement('h1');
+    heading.innerText = 'Note Taker';
+    const subheading = document.createElement('h2');
+    subheading.innerText = 'Saved Notes';
+
     this.nav = document.createElement('ul');
-    this.leftContainer.append(this.newNoteButton, this.nav);
+    this.leftContainer.append(
+      heading, this.newNoteButton, this.clearCacheButton, subheading, this.nav,
+    );
 
     this.notePad = document.createElement('main');
 
