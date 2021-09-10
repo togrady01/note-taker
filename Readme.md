@@ -6,12 +6,12 @@
 
 ## Primary Functions
 
-- [ ] Create New Note  
-- [ ] Edit Existing Note  
-- [ ] Delete Existing Note  
-- [ ] Group Notes in a Category  
-- [ ] Export Notes to Excel or similar
-- [ ] Persist data in local storage
+- [X] Create New Note  
+- [X] Edit Existing Note  
+- [_] Delete Existing Note  
+- [_] Group Notes in a Category  
+- [_] Export Notes to Excel or similar
+- [X] Persist data in local storage
 
 ## Plan
 
