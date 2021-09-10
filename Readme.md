@@ -10,7 +10,7 @@
 - [X] Edit Existing Note  
 - [_] Delete Existing Note  
 - [_] Group Notes in a Category  
-- [_] Export Notes to Excel or similar
+- [X] Export Notes to Excel or similar
 - [X] Persist data in local storage
 
 ## Plan

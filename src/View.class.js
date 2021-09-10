@@ -9,6 +9,13 @@ class View {
     this.clearCacheButton = document.createElement('button');
     this.clearCacheButton.innerText = 'Clear Saved Notes';
 
+    this.export = document.createElement('button');
+    this.export.innerText = 'Export Notes';
+
+    this.exportLink = document.createElement('a');
+    this.exportLink.style.display = 'none';
+    this.exportLink.download = 'NoteTaker_Export.xls';
+
     const heading = document.createElement('h1');
     heading.innerText = 'Note Taker';
     const subheading = document.createElement('h2');
@@ -16,7 +23,8 @@ class View {
 
     this.nav = document.createElement('ul');
     this.leftContainer.append(
-      heading, this.newNoteButton, this.clearCacheButton, subheading, this.nav,
+      heading, this.newNoteButton, this.clearCacheButton,
+      this.export, this.exportLink, subheading, this.nav,
     );
 
     this.notePad = document.createElement('main');

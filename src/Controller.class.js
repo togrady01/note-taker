@@ -24,6 +24,16 @@ class Controller {
       this.model.clearCache();
     });
 
+    this.view.export.addEventListener('click', () => {
+      const { notes } = this.model;
+      if (notes.length) {
+        const formattedText = notes.map((note, index) => `${index + 1}\t${note}\n`).join('').replace(/ /g, '%20');
+        this.view.exportLink.href = `data:application/vnd.ms-excel,ID\tNote\n${formattedText}`;
+        this.view.exportLink.click();
+        this.view.exportLink.href = '';
+      }
+    });
+
     this.view.loadNotes(
       this.model.notes, this.model.active, setActiveNote, (i) => this.model.delete(i),
     );
