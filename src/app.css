@@ -1,6 +1,8 @@
 body, html {
   height: 100%;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -55,6 +57,10 @@ nav ul li {
 nav li.active {
   background-color: cornflowerblue;
   color: white;
+}
+
+nav li.active::before {
+  content: '>>  ';
 }
 
 main {
