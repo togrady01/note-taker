@@ -8,7 +8,7 @@
 
 - [X] Create New Note  
 - [X] Edit Existing Note  
-- [_] Delete Existing Note  
+- [X] Delete Existing Note  
 - [_] Group Notes in a Category  
 - [X] Export Notes to Excel or similar
 - [X] Persist data in local storage

@@ -7,6 +7,7 @@ class Model {
     if (savedData) {
       [this.notes, this.active] = JSON.parse(savedData);
     }
+    this.delete = this.delete.bind(this);
   }
 
   create(note) {

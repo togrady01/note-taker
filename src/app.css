@@ -15,51 +15,66 @@ nav {
   height: 100%;
   min-width: 200px;
   width: 25%;
-  padding: 1rem;
+  padding: 0 1rem;
+  overflow: auto;
+  background-color: rgb(71, 71, 71);
+  color: white;
 }
 
-nav button {
+nav>button {
   width: 100%;
   border: 0;
   background-color: green;
   padding: .3rem;
   border-radius: .4rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   font-weight: 600;
   margin-bottom: .3rem;
   cursor: pointer;
 }
 
-nav button:last-of-type {
+nav>button:last-of-type {
   background-color: lightgray;
   color: black;
 }
 
-nav ul {
+nav>ul {
   margin: 0 ;
   padding: 0;
 }
 
-nav ul li {
-  font-size: 1.2rem;
+nav>ul>li {
   list-style-type: none;
-  border: 1px dashed cornflowerblue;
-  color: cornflowerblue;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: .2rem;
-  border-radius: .4rem;
-  cursor: pointer;
+  border: none;
   margin-bottom: .3rem;
+  display: flex;
 }
 
-nav li.active {
+nav>ul>li>button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: .2rem;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(143, 143, 143);
+}
+
+nav>ul>li>button:first-of-type {
+  flex-grow: 1;
+}
+
+nav>ul>li>button:last-of-type {
+  border: 1px dashed;
+}
+
+
+nav li button.active {
   background-color: cornflowerblue;
   color: white;
 }
 
-nav li.active::before {
+nav li button.active::before {
   content: '>>  ';
 }
 
@@ -67,12 +82,14 @@ main {
   height: 100%;
   flex-grow: 1;
   width: 100%;
-  padding: .5rem;
+  padding: 0;
+  margin-right: 1rem;
 }
 
 main textarea {
   width: 100%;
   height: 100%;
+  padding: .3rem;
 }
 
 h1, h2 {

@@ -5,19 +5,25 @@ class Controller {
 
     const setActiveNote = (noteIndex) => { this.model.active = noteIndex; };
 
+    const deleteNote = (noteIndex) => {
+      this.model.delete(noteIndex);
+      // eslint-disable-next-line no-use-before-define
+      render();
+    };
+
+    const render = () => this.view.loadNotes(
+      this.model.notes, this.model.active, setActiveNote, deleteNote,
+    );
+
     // build the app
     this.view.input.addEventListener('keyup', (e) => {
       this.model.update(e.target.value);
-      this.view.loadNotes(
-        this.model.notes, this.model.active, setActiveNote, (i) => this.model.delete(i),
-      );
+      render();
     });
 
     this.view.newNoteButton.addEventListener('click', () => {
       this.model.create('a new note');
-      this.view.loadNotes(
-        this.model.notes, this.model.active, setActiveNote, (i) => this.model.delete(i),
-      );
+      render();
     });
 
     this.view.clearCacheButton.addEventListener('click', () => {
@@ -34,9 +40,7 @@ class Controller {
       }
     });
 
-    this.view.loadNotes(
-      this.model.notes, this.model.active, setActiveNote, (i) => this.model.delete(i),
-    );
+    render();
   }
 }
 
