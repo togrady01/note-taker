@@ -1,8 +1,8 @@
 class Model {
   constructor() {
-    this.KEY = 'NOTES_APP';
-    this.notes = ['I\'m a note'];
-    this.active = 0;
+    this.KEY = 'NOTE_TAKER';
+    this.notes = [];
+    this.active = -1;
     const savedData = window.localStorage?.getItem(this.KEY);
     if (savedData) {
       [this.notes, this.active] = JSON.parse(savedData);
@@ -42,6 +42,8 @@ class Model {
 
   clearCache() {
     window.localStorage.removeItem(this.KEY);
+    this.notes = [];
+    this.active = -1;
   }
 }
 

@@ -28,6 +28,7 @@ class Controller {
 
     this.view.clearCacheButton.addEventListener('click', () => {
       this.model.clearCache();
+      render();
     });
 
     this.view.export.addEventListener('click', () => {

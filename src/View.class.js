@@ -71,6 +71,7 @@ class View {
           this.activeLink = selectNoteBtn;
           selectNoteBtn.classList.toggle('active');
           this.input.value = note;
+          this.input.disabled = false;
           onClick(index);
         });
 
@@ -78,6 +79,11 @@ class View {
           onDelete(index);
         });
       });
+
+      if (!active) {
+        this.input.disabled = true;
+        this.input.value = '';
+      }
     } else {
       // there are no notes, display a note to create a note
       this.nav.innerText = 'There are no notes!';
