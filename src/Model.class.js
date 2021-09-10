@@ -26,7 +26,11 @@ class Model {
     } else {
       this.notes = [];
     }
-    this.active = undefined;
+    if (this.active === index) {
+      this.active = undefined;
+    } else if (index < this.active) {
+      this.active -= 1;
+    }
     this.save();
   }
 
