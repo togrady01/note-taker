@@ -80,7 +80,7 @@ class View {
         });
       });
 
-      if (!active) {
+      if (active === undefined || active === -1) {
         this.input.disabled = true;
         this.input.value = '';
       }
