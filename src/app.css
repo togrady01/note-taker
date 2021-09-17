@@ -58,6 +58,7 @@ nav>ul>li>button {
   cursor: pointer;
   border: none;
   background-color: rgb(143, 143, 143);
+  white-space: nowrap;
 }
 
 nav>ul>li>button:first-of-type {
