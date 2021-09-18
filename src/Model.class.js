@@ -34,12 +34,18 @@ class Model {
     this.save();
   }
 
+  /**
+   * Persist our data in local storage
+   */
   save() {
     if (window.localStorage) {
       window.localStorage.setItem(this.KEY, JSON.stringify([this.notes, this.active]));
     }
   }
-
+  
+  /**
+   * Clear any persisted data from local storage
+   */
   clearCache() {
     window.localStorage.removeItem(this.KEY);
     this.notes = [];

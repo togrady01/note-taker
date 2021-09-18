@@ -1,4 +1,7 @@
 class View {
+  /**
+   * Build our initial UI
+   */
   constructor() {
     this.root = document.getElementById('root');
     this.leftContainer = document.createElement('nav');
@@ -42,6 +45,13 @@ class View {
     this.root.append(this.leftContainer, this.notePad);
   }
 
+  /**
+   * Load notes into the UI
+   * @param {*} notes 
+   * @param {*} active 
+   * @param {*} onClick 
+   * @param {*} onDelete 
+   */
   loadNotes(notes, active, onClick, onDelete) {
     this.nav.innerHTML = '';
     if (Array.isArray(notes) && notes.length) {

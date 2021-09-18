@@ -11,11 +11,17 @@ class Controller {
       render();
     };
 
+    /**
+     * Recreates our UI
+     */
     const render = () => this.view.loadNotes(
       this.model.notes, this.model.active, setActiveNote, deleteNote,
     );
 
-    // build the app
+    /**
+     * Attach events to UI 
+     */
+
     this.view.input.addEventListener('keyup', (e) => {
       this.model.update(e.target.value);
       render();
